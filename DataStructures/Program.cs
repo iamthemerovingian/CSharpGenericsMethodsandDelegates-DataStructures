@@ -11,7 +11,16 @@ namespace DataStructures
             
             ProcessInput(buffer);
 
+            var asInt = buffer.AsEnumerableOf<string>();
+
             foreach (var item in buffer)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("---------As String-------------");
+
+            foreach(var item in asInt)
             {
                 Console.WriteLine(item);
             }
