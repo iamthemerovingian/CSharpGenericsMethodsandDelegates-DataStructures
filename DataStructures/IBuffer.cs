@@ -10,7 +10,7 @@ namespace DataStructures
     {
         bool IsEmpty { get; }
         void Write(T value);
-        IEnumerable<Toutput> AsEnumerableOf<Toutput>();
+        //IEnumerable<Toutput> AsEnumerableOf<Toutput>();
         T Read();
     }
 }

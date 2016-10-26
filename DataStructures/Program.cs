@@ -10,15 +10,18 @@ namespace DataStructures
 
             
             ProcessInput(buffer);
+            buffer.Dump<double>();
 
-            var asInt = buffer.AsEnumerableOf<string>();
+            var asInt = buffer.AsEnumerableOf<double, int>();
+
+            Console.WriteLine("---------As as Double-------------");
 
             foreach (var item in buffer)
             {
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine("---------As String-------------");
+            Console.WriteLine("---------As Int-------------");
 
             foreach(var item in asInt)
             {
