@@ -19,7 +19,7 @@ namespace DataStructures
                 print(item);
             }
         }
-        public static IEnumerable<Toutput> AsEnumerableOf<T,Toutput>(this IBuffer<T> Buffer) // This IBuffer<T> Buffer is that it is an extension method of IBuffer<T>.
+        public static IEnumerable<Toutput> AsEnumerableOf<T, Toutput>(this IBuffer<T> Buffer) // This IBuffer<T> Buffer is that it is an extension method of IBuffer<T>.
         {
             var converter = TypeDescriptor.GetConverter(typeof(T));
 
@@ -28,6 +28,15 @@ namespace DataStructures
                 Toutput result = (Toutput)converter.ConvertTo(item, typeof(Toutput));
                 yield return result;
             }
+        }
+        public static IEnumerable<Toutput> Map<T, Toutput>(this IBuffer<T> Buffer, Converter<T, Toutput> converter) // This IBuffer<T> Buffer is that it is an extension method of IBuffer<T>.
+        {
+            return Buffer.Select(i => converter(i));
+            //foreach (var item in Buffer)
+            //{
+            //    Toutput result = converter(item);
+            //    yield return result;
+            //}
         }
 
     }
