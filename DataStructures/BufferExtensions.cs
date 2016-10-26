@@ -32,11 +32,6 @@ namespace DataStructures
         public static IEnumerable<Toutput> Map<T, Toutput>(this IBuffer<T> Buffer, Converter<T, Toutput> converter) // This IBuffer<T> Buffer is that it is an extension method of IBuffer<T>.
         {
             return Buffer.Select(i => converter(i));
-            //foreach (var item in Buffer)
-            //{
-            //    Toutput result = converter(item);
-            //    yield return result;
-            //}
         }
 
     }
