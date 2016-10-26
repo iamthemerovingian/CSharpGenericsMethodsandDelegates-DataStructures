@@ -15,8 +15,9 @@ namespace DataStructures
             ProcessInput(buffer);
 
             //var consoleOut = new Printer<double>(ConsoleWrite);
+            Action<double> print = ConsoleWrite;
 
-            buffer.Dump(ConsoleWrite);
+            buffer.Dump(print);
 
             var asInt = buffer.AsEnumerableOf<double, int>();
 
