@@ -4,13 +4,19 @@ namespace DataStructures
 {
     class Program
     {
+        static void ConsoleWrite(double data)
+        {
+            Console.WriteLine(data);
+        }
         static void Main(string[] args)
         {
             var buffer = new Buffer<double>();
-
             
             ProcessInput(buffer);
-            buffer.Dump<double>();
+
+            //var consoleOut = new Printer<double>(ConsoleWrite);
+
+            buffer.Dump(ConsoleWrite);
 
             var asInt = buffer.AsEnumerableOf<double, int>();
 

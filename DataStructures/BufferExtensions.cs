@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
+    public delegate void Printer<T>(T data);
+
     public static class BufferExtensions
     {
-        public static void Dump<T>(this IBuffer<T> buffer)
+        public static void Dump<T>(this IBuffer<T> buffer, Printer<T> print)
         {
             Console.WriteLine("----------BufferExtension-----------");
             foreach (var item in buffer)
             {
-                Console.WriteLine(item);
+                print(item);
             }
         }
         public static IEnumerable<Toutput> AsEnumerableOf<T,Toutput>(this IBuffer<T> Buffer) // This IBuffer<T> Buffer is that it is an extension method of IBuffer<T>.
